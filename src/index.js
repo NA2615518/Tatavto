@@ -1,13 +1,10 @@
-//абстрактно описываем обьект title
-//создаем обьекты, которые будут описывать другие блоки в index.html
-const model = [
-    {type: 'title', value: 'ООО ТАВ'},
-    {type: 'text', value: 'here we go with some text'},
-    {type: 'columns', value: [ '111111111', '222222222', '333333333'
-        ]},
-    {type: 'image', value: './assets/image.png' }
-]
-// получаем доступ до блока, генереруем html циклом
+/*абстрактно описываем обьект title
+  создаем обьекты, которые будут описывать другие блоки в index.html
+  получаем доступ до блока, генереруем html циклом*/
+
+import {model} from ' ./model' // импортируем в model.js //
+import { title, text, columns, image} from './templates'
+
 const $site = document.querySelector( '#site')
 
 model.forEach(block  => {
