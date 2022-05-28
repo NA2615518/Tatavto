@@ -4,7 +4,7 @@
 
 import {model} from ' ./model' // импортируем в model.js //
 import { title, text, columns, image} from './templates'
-import ' ./main.css'
+import ' ./styles /main.css'
 
 const $site = document.querySelector( '#site')
 
@@ -21,6 +21,8 @@ model.forEach(block  => {
         html = image(block)
     }
 
-    $site.insertAdjacentHTML(where: 'beforeend', html)
+    $site.insertAdjacentHTML(where, 'beforeend', html)
 })
+
+// Функции title, text, columns, image вынесены в файл templates.js дабы код был чистым //
 
