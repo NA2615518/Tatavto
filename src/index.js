@@ -3,13 +3,19 @@
   получаем доступ до блока, генереруем html циклом*/
 
 import {model} from ' ./model' // импортируем в model.js //
-import { title, text, columns, image} from './templates'
+import { templates } from './templates'
 import ' ./styles /main.css'
 
 const $site = document.querySelector( '#site')
 
+
+
+
+
 model.forEach(block  => {
-    let html = ''
+
+ 
+    /*  let html = ''
 
     if (block.type === 'title') {
         html = title(block)
@@ -20,8 +26,13 @@ model.forEach(block  => {
     } else if (block.type === 'image') {
         html = image(block)
     }
+*/
 
-    $site.insertAdjacentHTML(where, 'beforeend', html)
+const toHTML = templates[block.type]
+if (toHTML) {
+
+    $site.insertAdjacentHTML(where, 'beforeend', toHTML(block))
+}
 })
 
 // Функции title, text, columns, image вынесены в файл templates.js дабы код был чистым //
