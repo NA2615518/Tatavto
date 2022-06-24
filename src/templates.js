@@ -1,3 +1,5 @@
+import {row, col} from ' ./utils'
+
 export function title(block) {
     return `
     <div class="row">
@@ -34,6 +36,12 @@ export function  image(block) {
     </div>
     `
 
-    
+ /*export const templates = {
+    title,
+    text,
+    columns,
+    image
+}
+    */
     
 }
